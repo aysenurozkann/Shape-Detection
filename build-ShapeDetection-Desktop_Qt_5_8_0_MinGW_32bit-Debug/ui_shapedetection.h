@@ -71,7 +71,7 @@ public:
     {
         if (ShapeDetection->objectName().isEmpty())
             ShapeDetection->setObjectName(QStringLiteral("ShapeDetection"));
-        ShapeDetection->resize(486, 353);
+        ShapeDetection->resize(350, 350);
         ShapeDetection->setMinimumSize(QSize(350, 350));
         ShapeDetection->setStyleSheet(QLatin1String("#ShapeDetection{\n"
 "	background:#001219;\n"
@@ -155,13 +155,13 @@ public:
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setStyleSheet(QStringLiteral(""));
 
-        horizontalLayout_2->addWidget(pushButton_3);
+        horizontalLayout_2->addWidget(pushButton_3, 0, Qt::AlignTop);
 
         pushButton_4 = new QPushButton(centralWidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setStyleSheet(QStringLiteral(""));
 
-        horizontalLayout_2->addWidget(pushButton_4);
+        horizontalLayout_2->addWidget(pushButton_4, 0, Qt::AlignTop);
 
 
         verticalLayout_2->addLayout(horizontalLayout_2);
@@ -179,7 +179,7 @@ public:
         ShapeDetection->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ShapeDetection);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 486, 21));
+        menuBar->setGeometry(QRect(0, 0, 350, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menuBar);

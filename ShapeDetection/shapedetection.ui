@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>353</height>
+    <width>350</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -79,20 +79,17 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
+          <item alignment="Qt::AlignTop">
            <widget class="QPushButton" name="pushButton_3">
             <property name="styleSheet">
-             <string notr="true">
-
-
-</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Pause</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item alignment="Qt::AlignTop">
            <widget class="QPushButton" name="pushButton_4">
             <property name="styleSheet">
              <string notr="true"/>
@@ -115,7 +112,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>486</width>
+     <width>350</width>
      <height>21</height>
     </rect>
    </property>
