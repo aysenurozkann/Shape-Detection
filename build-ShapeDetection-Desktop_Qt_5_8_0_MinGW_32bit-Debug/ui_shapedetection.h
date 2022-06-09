@@ -15,15 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -50,15 +46,6 @@ public:
     QAction *actionFont;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_4;
-    QHBoxLayout *horizontalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QLabel *label_2;
-    QSpacerItem *verticalSpacer;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -71,7 +58,7 @@ public:
     {
         if (ShapeDetection->objectName().isEmpty())
             ShapeDetection->setObjectName(QStringLiteral("ShapeDetection"));
-        ShapeDetection->resize(350, 350);
+        ShapeDetection->resize(471, 441);
         ShapeDetection->setMinimumSize(QSize(350, 350));
         ShapeDetection->setStyleSheet(QLatin1String("#ShapeDetection{\n"
 "	background:#001219;\n"
@@ -117,69 +104,10 @@ public:
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setStyleSheet(QStringLiteral(""));
-        label->setFrameShape(QFrame::Box);
-        label->setFrameShadow(QFrame::Plain);
-
-        horizontalLayout->addWidget(label);
-
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFrameShape(QFrame::Box);
-        label_2->setFrameShadow(QFrame::Plain);
-
-        horizontalLayout->addWidget(label_2);
-
-
-        verticalLayout_2->addLayout(horizontalLayout);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_2->addItem(verticalSpacer);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setStyleSheet(QStringLiteral(""));
-
-        horizontalLayout_2->addWidget(pushButton_3, 0, Qt::AlignTop);
-
-        pushButton_4 = new QPushButton(centralWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setStyleSheet(QStringLiteral(""));
-
-        horizontalLayout_2->addWidget(pushButton_4, 0, Qt::AlignTop);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
-
-        verticalLayout_2->setStretch(0, 80);
-        verticalLayout_2->setStretch(1, 20);
-        verticalLayout_2->setStretch(2, 20);
-
-        horizontalLayout_3->addLayout(verticalLayout_2);
-
-        horizontalLayout_3->setStretch(0, 90);
-
-        horizontalLayout_4->addLayout(horizontalLayout_3);
-
         ShapeDetection->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ShapeDetection);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 350, 21));
+        menuBar->setGeometry(QRect(0, 0, 471, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menuBar);
@@ -244,10 +172,6 @@ public:
         actionErase->setText(QApplication::translate("ShapeDetection", "Erase", Q_NULLPTR));
         actionColor->setText(QApplication::translate("ShapeDetection", "Color", Q_NULLPTR));
         actionFont->setText(QApplication::translate("ShapeDetection", "Font", Q_NULLPTR));
-        label->setText(QApplication::translate("ShapeDetection", "Camera", Q_NULLPTR));
-        label_2->setText(QApplication::translate("ShapeDetection", "Opencv", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("ShapeDetection", "Pause", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("ShapeDetection", "Exit", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("ShapeDetection", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("ShapeDetection", "Edit", Q_NULLPTR));
         menuTools->setTitle(QApplication::translate("ShapeDetection", "Tools", Q_NULLPTR));
