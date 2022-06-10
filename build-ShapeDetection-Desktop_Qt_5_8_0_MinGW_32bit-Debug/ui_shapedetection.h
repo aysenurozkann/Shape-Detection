@@ -16,6 +16,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -51,6 +52,19 @@ public:
     QPushButton *settingsbtn;
     QPushButton *helpbtn;
     QWidget *MainBodyContainer;
+    QVBoxLayout *verticalLayout_5;
+    QWidget *headercontainer;
+    QHBoxLayout *horizontalLayout_3;
+    QFrame *frame_5;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_2;
+    QLabel *label;
+    QFrame *frame_4;
+    QHBoxLayout *horizontalLayout_4;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton;
+    QWidget *bodycontainer;
 
     void setupUi(QMainWindow *ShapeDetection)
     {
@@ -217,6 +231,75 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(MainBodyContainer->sizePolicy().hasHeightForWidth());
         MainBodyContainer->setSizePolicy(sizePolicy1);
+        MainBodyContainer->setStyleSheet(QStringLiteral("background-color:rgb(52, 151, 181);"));
+        verticalLayout_5 = new QVBoxLayout(MainBodyContainer);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        headercontainer = new QWidget(MainBodyContainer);
+        headercontainer->setObjectName(QStringLiteral("headercontainer"));
+        horizontalLayout_3 = new QHBoxLayout(headercontainer);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(10, 10, 10, 10);
+        frame_5 = new QFrame(headercontainer);
+        frame_5->setObjectName(QStringLiteral("frame_5"));
+        frame_5->setFrameShape(QFrame::StyledPanel);
+        frame_5->setFrameShadow(QFrame::Raised);
+        horizontalLayout_5 = new QHBoxLayout(frame_5);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(frame_5);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        horizontalLayout_5->addWidget(label_2);
+
+        label = new QLabel(frame_5);
+        label->setObjectName(QStringLiteral("label"));
+
+        horizontalLayout_5->addWidget(label);
+
+
+        horizontalLayout_3->addWidget(frame_5, 0, Qt::AlignLeft);
+
+        frame_4 = new QFrame(headercontainer);
+        frame_4->setObjectName(QStringLiteral("frame_4"));
+        frame_4->setFrameShape(QFrame::StyledPanel);
+        frame_4->setFrameShadow(QFrame::Raised);
+        horizontalLayout_4 = new QHBoxLayout(frame_4);
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        pushButton_2 = new QPushButton(frame_4);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        horizontalLayout_4->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(frame_4);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        horizontalLayout_4->addWidget(pushButton_3);
+
+        pushButton = new QPushButton(frame_4);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout_4->addWidget(pushButton);
+
+
+        horizontalLayout_3->addWidget(frame_4, 0, Qt::AlignRight);
+
+
+        verticalLayout_5->addWidget(headercontainer, 0, Qt::AlignTop);
+
+        bodycontainer = new QWidget(MainBodyContainer);
+        bodycontainer->setObjectName(QStringLiteral("bodycontainer"));
+
+        verticalLayout_5->addWidget(bodycontainer);
+
 
         horizontalLayout->addWidget(MainBodyContainer);
 
@@ -267,6 +350,11 @@ public:
         helpbtn->setToolTip(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         helpbtn->setText(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
+        label_2->setText(QApplication::translate("ShapeDetection", "uygulama iconu", Q_NULLPTR));
+        label->setText(QApplication::translate("ShapeDetection", "Shape Detection", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("ShapeDetection", "Kucult", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("ShapeDetection", "Buyut", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("ShapeDetection", "Carpi", Q_NULLPTR));
     } // retranslateUi
 
 };
