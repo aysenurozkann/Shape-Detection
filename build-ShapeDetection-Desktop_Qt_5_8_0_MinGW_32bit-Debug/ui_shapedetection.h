@@ -70,15 +70,12 @@ public:
     {
         if (ShapeDetection->objectName().isEmpty())
             ShapeDetection->setObjectName(QStringLiteral("ShapeDetection"));
-        ShapeDetection->resize(518, 510);
-        ShapeDetection->setMinimumSize(QSize(350, 350));
+        ShapeDetection->resize(600, 550);
+        ShapeDetection->setMinimumSize(QSize(600, 550));
         ShapeDetection->setStyleSheet(QLatin1String("#ShapeDetection{\n"
 "	background:#001219;\n"
 "}\n"
-""));
-        centralWidget = new QWidget(ShapeDetection);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setStyleSheet(QLatin1String("*{\n"
+"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
 "	background : none;\n"
@@ -100,7 +97,20 @@ public:
 "	padding:10px 10px;\n"
 "	border-top-left-radius:10px;\n"
 "	border-bottom-left-radius:10px;\n"
+"}\n"
+"\n"
+"#frame_4{\n"
+"	background-color:#16191d;\n"
+"	border-radius: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"#headercontainer{\n"
+"	background-color:#2c313c;\n"
 "}"));
+        centralWidget = new QWidget(ShapeDetection);
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setStyleSheet(QStringLiteral(""));
         horizontalLayout = new QHBoxLayout(centralWidget);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -231,18 +241,20 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(MainBodyContainer->sizePolicy().hasHeightForWidth());
         MainBodyContainer->setSizePolicy(sizePolicy1);
-        MainBodyContainer->setStyleSheet(QStringLiteral("background-color:rgb(52, 151, 181);"));
+        MainBodyContainer->setStyleSheet(QStringLiteral(""));
         verticalLayout_5 = new QVBoxLayout(MainBodyContainer);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         headercontainer = new QWidget(MainBodyContainer);
         headercontainer->setObjectName(QStringLiteral("headercontainer"));
+        headercontainer->setStyleSheet(QStringLiteral(""));
         horizontalLayout_3 = new QHBoxLayout(headercontainer);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(10, 10, 10, 10);
+        horizontalLayout_3->setContentsMargins(5, 5, 5, 5);
         frame_5 = new QFrame(headercontainer);
         frame_5->setObjectName(QStringLiteral("frame_5"));
         frame_5->setFrameShape(QFrame::StyledPanel);
@@ -259,6 +271,11 @@ public:
 
         label = new QLabel(frame_5);
         label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setPointSize(10);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
 
         horizontalLayout_5->addWidget(label);
 
@@ -267,13 +284,14 @@ public:
 
         frame_4 = new QFrame(headercontainer);
         frame_4->setObjectName(QStringLiteral("frame_4"));
+        frame_4->setStyleSheet(QStringLiteral(""));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
         horizontalLayout_4 = new QHBoxLayout(frame_4);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_4->setContentsMargins(4, 4, 4, 4);
         pushButton_2 = new QPushButton(frame_4);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 

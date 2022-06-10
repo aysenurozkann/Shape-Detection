@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>518</width>
-    <height>510</height>
+    <width>600</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>350</width>
-    <height>350</height>
+    <width>600</width>
+    <height>550</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -23,11 +23,7 @@
    <string notr="true">#ShapeDetection{
 	background:#001219;
 }
-</string>
-  </property>
-  <widget class="QWidget" name="centralWidget">
-   <property name="styleSheet">
-    <string notr="true">*{
+*{
 	border: none;
 	background-color: transparent;
 	background : none;
@@ -49,11 +45,25 @@
 	padding:10px 10px;
 	border-top-left-radius:10px;
 	border-bottom-left-radius:10px;
+}
+
+#frame_4{
+	background-color:#16191d;
+	border-radius: 10px;
+
+}
+
+#headercontainer{
+	background-color:#2c313c;
 }</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
-     <number>0</number>
+     <number>100</number>
     </property>
     <property name="leftMargin">
      <number>0</number>
@@ -174,22 +184,32 @@
               <number>10</number>
              </property>
              <item>
-              <widget class="QPushButton" name="zoominbtn">
+              <widget class="QPushButton" name="livevideobtn">
                <property name="toolTip">
-                <string>zoomin</string>
+                <string>Live Video</string>
                </property>
                <property name="text">
-                <string>Zoom in</string>
+                <string>Live video</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="zoomoutbtn">
+              <widget class="QPushButton" name="openvideobtn">
                <property name="toolTip">
-                <string>zoomout</string>
+                <string>Open Video</string>
                </property>
                <property name="text">
-                <string>Zoom out</string>
+                <string>Open Video</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="openphotobtn">
+               <property name="toolTip">
+                <string>Open Photo</string>
+               </property>
+               <property name="text">
+                <string>Open Photo</string>
                </property>
               </widget>
              </item>
@@ -324,11 +344,29 @@
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(52, 151, 181);</string>
+       <string notr="true">background-color: rgb(255, 170, 127);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item alignment="Qt::AlignTop">
         <widget class="QWidget" name="headercontainer" native="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
            <number>6</number>
@@ -378,6 +416,13 @@
              </item>
              <item>
               <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="text">
                 <string>Shape Detection</string>
                </property>
@@ -388,6 +433,9 @@
           </item>
           <item alignment="Qt::AlignRight">
            <widget class="QFrame" name="frame_4">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -399,16 +447,16 @@
               <number>6</number>
              </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>4</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>4</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>4</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>4</number>
              </property>
              <item>
               <widget class="QPushButton" name="pushButton_2">
