@@ -43,7 +43,7 @@
 }
 
 #LeftMenuSubContainer{
-	background-color:#16191d;
+	background-color:#16191dz;
 }
 
 #LeftMenuSubContainer QPushButton{
@@ -749,7 +749,7 @@ background-color:#2c313c;
                 <item>
                  <widget class="QLabel" name="label_7">
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 170, 255);</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>Buyuk oynatılan goruntu</string>
@@ -777,7 +777,7 @@ background-color:#2c313c;
                    <item>
                     <widget class="QLabel" name="label_8">
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(170, 255, 127);</string>
+                      <string notr="true"/>
                      </property>
                      <property name="text">
                       <string>Tespit çıktıları</string>
@@ -811,7 +811,7 @@ background-color:#2c313c;
                       <item>
                        <widget class="QLabel" name="label_9">
                         <property name="styleSheet">
-                         <string notr="true">background-color: rgb(170, 255, 127);</string>
+                         <string notr="true"/>
                         </property>
                         <property name="text">
                          <string>kucuk oynatılan goruntu</string>
