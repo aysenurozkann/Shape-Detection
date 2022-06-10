@@ -13,13 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,125 +27,200 @@ QT_BEGIN_NAMESPACE
 class Ui_ShapeDetection
 {
 public:
-    QAction *actionOpen;
-    QAction *actionOpen_Camera;
-    QAction *actionNew_Window;
-    QAction *actionClear_Window;
-    QAction *actionExit;
-    QAction *actionExit_2;
-    QAction *actionTake_a_Screen_Shoot;
-    QAction *actionExit_3;
-    QAction *actionZoom_in;
-    QAction *actionZoom_out;
-    QAction *actionUndo;
-    QAction *actionRedo;
-    QAction *actionPencil;
-    QAction *actionPencil_2;
-    QAction *actionErase;
-    QAction *actionColor;
-    QAction *actionFont;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_4;
-    QMenuBar *menuBar;
-    QMenu *menuFile;
-    QMenu *menuEdit;
-    QMenu *menuTools;
-    QMenu *menuTools_Setting;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
+    QHBoxLayout *horizontalLayout;
+    QWidget *LeftMenuContainer;
+    QVBoxLayout *verticalLayout;
+    QWidget *LeftMenuSubContainer;
+    QVBoxLayout *verticalLayout_2;
+    QFrame *frame;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *menubtn;
+    QFrame *frame_2;
+    QVBoxLayout *verticalLayout_3;
+    QPushButton *zoominbtn;
+    QPushButton *zoomoutbtn;
+    QPushButton *pencilbtn;
+    QPushButton *erasebtn;
+    QPushButton *takephotobtn;
+    QPushButton *switchbtn;
+    QSpacerItem *verticalSpacer;
+    QFrame *frame_3;
+    QVBoxLayout *verticalLayout_4;
+    QPushButton *pushButton_5;
+    QPushButton *settingsbtn;
+    QPushButton *helpbtn;
+    QWidget *MainBodyContainer;
 
     void setupUi(QMainWindow *ShapeDetection)
     {
         if (ShapeDetection->objectName().isEmpty())
             ShapeDetection->setObjectName(QStringLiteral("ShapeDetection"));
-        ShapeDetection->resize(471, 441);
+        ShapeDetection->resize(518, 510);
         ShapeDetection->setMinimumSize(QSize(350, 350));
         ShapeDetection->setStyleSheet(QLatin1String("#ShapeDetection{\n"
 "	background:#001219;\n"
 "}\n"
 ""));
-        actionOpen = new QAction(ShapeDetection);
-        actionOpen->setObjectName(QStringLiteral("actionOpen"));
-        actionOpen_Camera = new QAction(ShapeDetection);
-        actionOpen_Camera->setObjectName(QStringLiteral("actionOpen_Camera"));
-        actionNew_Window = new QAction(ShapeDetection);
-        actionNew_Window->setObjectName(QStringLiteral("actionNew_Window"));
-        actionClear_Window = new QAction(ShapeDetection);
-        actionClear_Window->setObjectName(QStringLiteral("actionClear_Window"));
-        actionExit = new QAction(ShapeDetection);
-        actionExit->setObjectName(QStringLiteral("actionExit"));
-        actionExit_2 = new QAction(ShapeDetection);
-        actionExit_2->setObjectName(QStringLiteral("actionExit_2"));
-        actionTake_a_Screen_Shoot = new QAction(ShapeDetection);
-        actionTake_a_Screen_Shoot->setObjectName(QStringLiteral("actionTake_a_Screen_Shoot"));
-        actionExit_3 = new QAction(ShapeDetection);
-        actionExit_3->setObjectName(QStringLiteral("actionExit_3"));
-        actionZoom_in = new QAction(ShapeDetection);
-        actionZoom_in->setObjectName(QStringLiteral("actionZoom_in"));
-        actionZoom_out = new QAction(ShapeDetection);
-        actionZoom_out->setObjectName(QStringLiteral("actionZoom_out"));
-        actionUndo = new QAction(ShapeDetection);
-        actionUndo->setObjectName(QStringLiteral("actionUndo"));
-        actionRedo = new QAction(ShapeDetection);
-        actionRedo->setObjectName(QStringLiteral("actionRedo"));
-        actionPencil = new QAction(ShapeDetection);
-        actionPencil->setObjectName(QStringLiteral("actionPencil"));
-        actionPencil_2 = new QAction(ShapeDetection);
-        actionPencil_2->setObjectName(QStringLiteral("actionPencil_2"));
-        actionErase = new QAction(ShapeDetection);
-        actionErase->setObjectName(QStringLiteral("actionErase"));
-        actionColor = new QAction(ShapeDetection);
-        actionColor->setObjectName(QStringLiteral("actionColor"));
-        actionFont = new QAction(ShapeDetection);
-        actionFont->setObjectName(QStringLiteral("actionFont"));
         centralWidget = new QWidget(ShapeDetection);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout_4 = new QHBoxLayout(centralWidget);
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        ShapeDetection->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(ShapeDetection);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 471, 21));
-        menuFile = new QMenu(menuBar);
-        menuFile->setObjectName(QStringLiteral("menuFile"));
-        menuEdit = new QMenu(menuBar);
-        menuEdit->setObjectName(QStringLiteral("menuEdit"));
-        menuTools = new QMenu(menuBar);
-        menuTools->setObjectName(QStringLiteral("menuTools"));
-        menuTools_Setting = new QMenu(menuTools);
-        menuTools_Setting->setObjectName(QStringLiteral("menuTools_Setting"));
-        ShapeDetection->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(ShapeDetection);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        ShapeDetection->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(ShapeDetection);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        ShapeDetection->setStatusBar(statusBar);
+        centralWidget->setStyleSheet(QLatin1String("*{\n"
+"	border: none;\n"
+"	background-color: transparent;\n"
+"	background : none;\n"
+"	padding: 0;\n"
+"	margin: 0;\n"
+"	color:#fff;\n"
+"}\n"
+"\n"
+"#centralWidget{\n"
+"	background-color:#1f232a;\n"
+"}\n"
+"\n"
+"#LeftMenuSubContainer{\n"
+"	background-color:#16191d;\n"
+"}\n"
+"\n"
+"#LeftMenuSubContainer QPushButton{\n"
+"	text-align:left;\n"
+"	padding:10px 10px;\n"
+"	border-top-left-radius:10px;\n"
+"	border-bottom-left-radius:10px;\n"
+"}"));
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        LeftMenuContainer = new QWidget(centralWidget);
+        LeftMenuContainer->setObjectName(QStringLiteral("LeftMenuContainer"));
+        verticalLayout = new QVBoxLayout(LeftMenuContainer);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        LeftMenuSubContainer = new QWidget(LeftMenuContainer);
+        LeftMenuSubContainer->setObjectName(QStringLiteral("LeftMenuSubContainer"));
+        verticalLayout_2 = new QVBoxLayout(LeftMenuSubContainer);
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(10, 0, 0, 0);
+        frame = new QFrame(LeftMenuSubContainer);
+        frame->setObjectName(QStringLiteral("frame"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        horizontalLayout_2 = new QHBoxLayout(frame);
+        horizontalLayout_2->setSpacing(0);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        menubtn = new QPushButton(frame);
+        menubtn->setObjectName(QStringLiteral("menubtn"));
+        menubtn->setStyleSheet(QStringLiteral(""));
 
-        menuBar->addAction(menuFile->menuAction());
-        menuBar->addAction(menuEdit->menuAction());
-        menuBar->addAction(menuTools->menuAction());
-        menuFile->addAction(actionOpen);
-        menuFile->addAction(actionOpen_Camera);
-        menuFile->addAction(actionNew_Window);
-        menuFile->addAction(actionClear_Window);
-        menuFile->addSeparator();
-        menuFile->addAction(actionTake_a_Screen_Shoot);
-        menuFile->addSeparator();
-        menuFile->addAction(actionExit_3);
-        menuEdit->addAction(actionZoom_in);
-        menuEdit->addAction(actionZoom_out);
-        menuEdit->addSeparator();
-        menuEdit->addAction(actionUndo);
-        menuEdit->addAction(actionRedo);
-        menuTools->addAction(actionPencil_2);
-        menuTools->addAction(actionErase);
-        menuTools->addSeparator();
-        menuTools->addAction(menuTools_Setting->menuAction());
-        menuTools_Setting->addAction(actionColor);
-        menuTools_Setting->addAction(actionFont);
+        horizontalLayout_2->addWidget(menubtn);
+
+
+        verticalLayout_2->addWidget(frame, 0, Qt::AlignTop);
+
+        frame_2 = new QFrame(LeftMenuSubContainer);
+        frame_2->setObjectName(QStringLiteral("frame_2"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(frame_2->sizePolicy().hasHeightForWidth());
+        frame_2->setSizePolicy(sizePolicy);
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        verticalLayout_3 = new QVBoxLayout(frame_2);
+        verticalLayout_3->setSpacing(0);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 10, 0, 10);
+        zoominbtn = new QPushButton(frame_2);
+        zoominbtn->setObjectName(QStringLiteral("zoominbtn"));
+
+        verticalLayout_3->addWidget(zoominbtn);
+
+        zoomoutbtn = new QPushButton(frame_2);
+        zoomoutbtn->setObjectName(QStringLiteral("zoomoutbtn"));
+
+        verticalLayout_3->addWidget(zoomoutbtn);
+
+        pencilbtn = new QPushButton(frame_2);
+        pencilbtn->setObjectName(QStringLiteral("pencilbtn"));
+
+        verticalLayout_3->addWidget(pencilbtn);
+
+        erasebtn = new QPushButton(frame_2);
+        erasebtn->setObjectName(QStringLiteral("erasebtn"));
+
+        verticalLayout_3->addWidget(erasebtn);
+
+        takephotobtn = new QPushButton(frame_2);
+        takephotobtn->setObjectName(QStringLiteral("takephotobtn"));
+
+        verticalLayout_3->addWidget(takephotobtn);
+
+        switchbtn = new QPushButton(frame_2);
+        switchbtn->setObjectName(QStringLiteral("switchbtn"));
+
+        verticalLayout_3->addWidget(switchbtn);
+
+
+        verticalLayout_2->addWidget(frame_2, 0, Qt::AlignTop);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_2->addItem(verticalSpacer);
+
+        frame_3 = new QFrame(LeftMenuSubContainer);
+        frame_3->setObjectName(QStringLiteral("frame_3"));
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Raised);
+        verticalLayout_4 = new QVBoxLayout(frame_3);
+        verticalLayout_4->setSpacing(0);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 10, 0, 10);
+        pushButton_5 = new QPushButton(frame_3);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+
+        verticalLayout_4->addWidget(pushButton_5);
+
+        settingsbtn = new QPushButton(frame_3);
+        settingsbtn->setObjectName(QStringLiteral("settingsbtn"));
+        settingsbtn->setStyleSheet(QStringLiteral("background-color:#1f232a;"));
+
+        verticalLayout_4->addWidget(settingsbtn);
+
+        helpbtn = new QPushButton(frame_3);
+        helpbtn->setObjectName(QStringLiteral("helpbtn"));
+        helpbtn->setStyleSheet(QStringLiteral("background-color:#16191d;"));
+
+        verticalLayout_4->addWidget(helpbtn);
+
+
+        verticalLayout_2->addWidget(frame_3, 0, Qt::AlignBottom);
+
+
+        verticalLayout->addWidget(LeftMenuSubContainer, 0, Qt::AlignLeft);
+
+
+        horizontalLayout->addWidget(LeftMenuContainer, 0, Qt::AlignLeft);
+
+        MainBodyContainer = new QWidget(centralWidget);
+        MainBodyContainer->setObjectName(QStringLiteral("MainBodyContainer"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(MainBodyContainer->sizePolicy().hasHeightForWidth());
+        MainBodyContainer->setSizePolicy(sizePolicy1);
+
+        horizontalLayout->addWidget(MainBodyContainer);
+
+        ShapeDetection->setCentralWidget(centralWidget);
 
         retranslateUi(ShapeDetection);
 
@@ -155,27 +230,43 @@ public:
     void retranslateUi(QMainWindow *ShapeDetection)
     {
         ShapeDetection->setWindowTitle(QApplication::translate("ShapeDetection", "ShapeDetection", Q_NULLPTR));
-        actionOpen->setText(QApplication::translate("ShapeDetection", "Open", Q_NULLPTR));
-        actionOpen_Camera->setText(QApplication::translate("ShapeDetection", "Open Camera", Q_NULLPTR));
-        actionNew_Window->setText(QApplication::translate("ShapeDetection", "New Window", Q_NULLPTR));
-        actionClear_Window->setText(QApplication::translate("ShapeDetection", "Clear Window", Q_NULLPTR));
-        actionExit->setText(QApplication::translate("ShapeDetection", "Exit", Q_NULLPTR));
-        actionExit_2->setText(QApplication::translate("ShapeDetection", "Exit", Q_NULLPTR));
-        actionTake_a_Screen_Shoot->setText(QApplication::translate("ShapeDetection", "Take a Screen Shoot", Q_NULLPTR));
-        actionExit_3->setText(QApplication::translate("ShapeDetection", "Exit", Q_NULLPTR));
-        actionZoom_in->setText(QApplication::translate("ShapeDetection", "Zoom in", Q_NULLPTR));
-        actionZoom_out->setText(QApplication::translate("ShapeDetection", "Zoom out", Q_NULLPTR));
-        actionUndo->setText(QApplication::translate("ShapeDetection", "Undo", Q_NULLPTR));
-        actionRedo->setText(QApplication::translate("ShapeDetection", "Redo", Q_NULLPTR));
-        actionPencil->setText(QApplication::translate("ShapeDetection", "Pencil", Q_NULLPTR));
-        actionPencil_2->setText(QApplication::translate("ShapeDetection", "Pencil", Q_NULLPTR));
-        actionErase->setText(QApplication::translate("ShapeDetection", "Erase", Q_NULLPTR));
-        actionColor->setText(QApplication::translate("ShapeDetection", "Color", Q_NULLPTR));
-        actionFont->setText(QApplication::translate("ShapeDetection", "Font", Q_NULLPTR));
-        menuFile->setTitle(QApplication::translate("ShapeDetection", "File", Q_NULLPTR));
-        menuEdit->setTitle(QApplication::translate("ShapeDetection", "Edit", Q_NULLPTR));
-        menuTools->setTitle(QApplication::translate("ShapeDetection", "Tools", Q_NULLPTR));
-        menuTools_Setting->setTitle(QApplication::translate("ShapeDetection", "Tools Setting", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        menubtn->setToolTip(QApplication::translate("ShapeDetection", "menu", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        menubtn->setText(QApplication::translate("ShapeDetection", "Menu", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        zoominbtn->setToolTip(QApplication::translate("ShapeDetection", "zoomin", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        zoominbtn->setText(QApplication::translate("ShapeDetection", "Zoom in", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        zoomoutbtn->setToolTip(QApplication::translate("ShapeDetection", "zoomout", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        zoomoutbtn->setText(QApplication::translate("ShapeDetection", "Zoom out", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pencilbtn->setToolTip(QApplication::translate("ShapeDetection", "pencil", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        pencilbtn->setText(QApplication::translate("ShapeDetection", "Pencil", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        erasebtn->setToolTip(QApplication::translate("ShapeDetection", "erase", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        erasebtn->setText(QApplication::translate("ShapeDetection", "Erase", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        takephotobtn->setToolTip(QApplication::translate("ShapeDetection", "takephoto", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        takephotobtn->setText(QApplication::translate("ShapeDetection", "Take a Photo", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        switchbtn->setToolTip(QApplication::translate("ShapeDetection", "switch", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        switchbtn->setText(QApplication::translate("ShapeDetection", "Switch", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("ShapeDetection", "PushButton", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        settingsbtn->setToolTip(QApplication::translate("ShapeDetection", "Settings", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        settingsbtn->setText(QApplication::translate("ShapeDetection", "Settings", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        helpbtn->setToolTip(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        helpbtn->setText(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
     } // retranslateUi
 
 };
