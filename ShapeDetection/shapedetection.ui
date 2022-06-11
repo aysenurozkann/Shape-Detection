@@ -43,7 +43,7 @@
 }
 
 #LeftMenuSubContainer{
-	background-color:#16191dz;
+	background-color:#16191d;
 }
 
 #LeftMenuSubContainer QPushButton{
@@ -271,10 +271,18 @@ background-color:#2c313c;
                </property>
                <property name="styleSheet">
                 <string notr="true">background-color:rgb(0, 170, 255);
+background-color: rgb(102, 233, 240);
 </string>
                </property>
                <property name="text">
                 <string>Switch</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pausebtn">
+               <property name="text">
+                <string>Pause</string>
                </property>
               </widget>
              </item>
@@ -753,7 +761,7 @@ background-color:#2c313c;
                 <item>
                  <widget class="QLabel" name="label_7">
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">background-color: rgb(39, 164, 175);</string>
                   </property>
                   <property name="text">
                    <string>Buyuk oynatılan goruntu</string>
@@ -779,12 +787,21 @@ background-color:#2c313c;
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_8">
-                     <property name="styleSheet">
-                      <string notr="true"/>
+                    <widget class="QPlainTextEdit" name="outputopencv">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
                      </property>
-                     <property name="text">
-                      <string>Tespit çıktıları</string>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(170, 170, 255);</string>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="tabStopWidth">
+                      <number>80</number>
                      </property>
                     </widget>
                    </item>
@@ -815,7 +832,7 @@ background-color:#2c313c;
                       <item>
                        <widget class="QLabel" name="label_9">
                         <property name="styleSheet">
-                         <string notr="true"/>
+                         <string notr="true">background-color: rgb(255, 170, 255);</string>
                         </property>
                         <property name="text">
                          <string>kucuk oynatılan goruntu</string>

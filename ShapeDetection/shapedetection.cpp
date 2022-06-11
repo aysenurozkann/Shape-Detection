@@ -12,3 +12,5 @@ ShapeDetection::~ShapeDetection()
 {
     delete ui;
 }
+
+

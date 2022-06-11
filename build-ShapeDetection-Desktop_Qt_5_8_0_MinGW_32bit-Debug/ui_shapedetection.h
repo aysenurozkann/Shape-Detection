@@ -242,6 +242,8 @@ public:
 
         switchbtn = new QPushButton(frame_2);
         switchbtn->setObjectName(QStringLiteral("switchbtn"));
+        switchbtn->setStyleSheet(QLatin1String("background-color:rgb(0, 170, 255);\n"
+""));
 
         verticalLayout_3->addWidget(switchbtn);
 
