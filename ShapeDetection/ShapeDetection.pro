@@ -29,3 +29,33 @@ SOURCES += main.cpp\
 HEADERS  += shapedetection.h
 
 FORMS    += shapedetection.ui
+
+
+INCLUDEPATH += C:\opencv320\opencv\release\install\include
+
+LIBS += C:\opencv320\opencv\release\bin\libopencv_calib3d320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_core320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_features2d320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_flann320.dll
+
+LIBS += C:\opencv320\opencv\release\bin\libopencv_highgui320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_imgcodecs320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_imgproc320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_ml320.dll
+
+LIBS += C:\opencv320\opencv\release\bin\libopencv_objdetect320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_photo320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_shape320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_stitching320.dll
+
+LIBS += C:\opencv320\opencv\release\bin\libopencv_superres320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_video320.dll
+LIBS += C:\opencv320\opencv\release\bin\libopencv_videoio320.dll
+
+LIBS += C:\opencv320\opencv\release\bin\libopencv_videostab320.dll
+LIBS += C:\opencv320\opencv\release\bin\opencv_ffmpeg320.dll
+
+
+
+
+SOURCES += main.cpp

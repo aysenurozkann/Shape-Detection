@@ -126,7 +126,7 @@ public:
 "}\n"
 "\n"
 "#LeftMenuSubContainer{\n"
-"	background-color:#16191d;\n"
+"	background-color:#16191dz;\n"
 "}\n"
 "\n"
 "#LeftMenuSubContainer QPushButton{\n"
@@ -493,7 +493,7 @@ public:
         verticalLayout_10->setContentsMargins(5, 5, 5, 5);
         label_7 = new QLabel(frame_6);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 255);"));
+        label_7->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_10->addWidget(label_7);
 
@@ -506,7 +506,7 @@ public:
         horizontalLayout_10->setContentsMargins(0, 5, 0, 0);
         label_8 = new QLabel(widget_2);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 127);"));
+        label_8->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_10->addWidget(label_8);
 
@@ -521,7 +521,7 @@ public:
         horizontalLayout_11->setContentsMargins(0, 0, 0, 0);
         label_9 = new QLabel(smallimg);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 127);"));
+        label_9->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_11->addWidget(label_9);
 
