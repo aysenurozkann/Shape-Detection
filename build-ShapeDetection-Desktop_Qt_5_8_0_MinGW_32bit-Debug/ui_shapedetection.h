@@ -18,9 +18,9 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -47,30 +47,13 @@ public:
     QPushButton *erasebtn;
     QPushButton *takephotobtn;
     QPushButton *switchbtn;
+    QPushButton *pausebtn;
     QSpacerItem *verticalSpacer;
     QFrame *frame_3;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *pushButton_5;
+    QPushButton *closeFramebtn;
     QPushButton *settingsbtn;
     QPushButton *helpbtn;
-    QWidget *centerMainContainer;
-    QVBoxLayout *verticalLayout_6;
-    QWidget *centerMainSubContainer;
-    QVBoxLayout *verticalLayout_7;
-    QFrame *frame_7;
-    QHBoxLayout *horizontalLayout_6;
-    QPushButton *pushButton_4;
-    QLabel *label_3;
-    QStackedWidget *stackedWidget;
-    QWidget *page;
-    QHBoxLayout *horizontalLayout_7;
-    QLabel *label_4;
-    QWidget *page_2;
-    QVBoxLayout *verticalLayout_8;
-    QLabel *label_5;
-    QWidget *page_5;
-    QVBoxLayout *verticalLayout_9;
-    QLabel *label_6;
     QWidget *MainBodyContainer;
     QVBoxLayout *verticalLayout_5;
     QWidget *headercontainer;
@@ -90,13 +73,13 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QFrame *frame_6;
     QVBoxLayout *verticalLayout_10;
-    QLabel *label_7;
+    QLabel *outputframe;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_10;
-    QLabel *label_8;
+    QPlainTextEdit *outputlabels;
     QFrame *smallimg;
     QHBoxLayout *horizontalLayout_11;
-    QLabel *label_9;
+    QLabel *inputframe;
 
     void setupUi(QMainWindow *ShapeDetection)
     {
@@ -126,7 +109,7 @@ public:
 "}\n"
 "\n"
 "#LeftMenuSubContainer{\n"
-"	background-color:#16191dz;\n"
+"	background-color:#16191d;\n"
 "}\n"
 "\n"
 "#LeftMenuSubContainer QPushButton{\n"
@@ -166,6 +149,11 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         LeftMenuContainer = new QWidget(centralWidget);
         LeftMenuContainer->setObjectName(QStringLiteral("LeftMenuContainer"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(LeftMenuContainer->sizePolicy().hasHeightForWidth());
+        LeftMenuContainer->setSizePolicy(sizePolicy1);
         verticalLayout = new QVBoxLayout(LeftMenuContainer);
         verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -177,7 +165,7 @@ public:
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(10, 0, 0, 0);
+        verticalLayout_2->setContentsMargins(10, 0, 30, 0);
         frame = new QFrame(LeftMenuSubContainer);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -198,9 +186,6 @@ public:
 
         frame_2 = new QFrame(LeftMenuSubContainer);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(frame_2->sizePolicy().hasHeightForWidth());
         frame_2->setSizePolicy(sizePolicy1);
         frame_2->setFrameShape(QFrame::StyledPanel);
@@ -243,9 +228,15 @@ public:
         switchbtn = new QPushButton(frame_2);
         switchbtn->setObjectName(QStringLiteral("switchbtn"));
         switchbtn->setStyleSheet(QLatin1String("background-color:rgb(0, 170, 255);\n"
+"background-color: rgb(102, 233, 240);\n"
 ""));
 
         verticalLayout_3->addWidget(switchbtn);
+
+        pausebtn = new QPushButton(frame_2);
+        pausebtn->setObjectName(QStringLiteral("pausebtn"));
+
+        verticalLayout_3->addWidget(pausebtn);
 
 
         verticalLayout_2->addWidget(frame_2, 0, Qt::AlignTop);
@@ -263,10 +254,10 @@ public:
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 10, 0, 10);
-        pushButton_5 = new QPushButton(frame_3);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        closeFramebtn = new QPushButton(frame_3);
+        closeFramebtn->setObjectName(QStringLiteral("closeFramebtn"));
 
-        verticalLayout_4->addWidget(pushButton_5);
+        verticalLayout_4->addWidget(closeFramebtn);
 
         settingsbtn = new QPushButton(frame_3);
         settingsbtn->setObjectName(QStringLiteral("settingsbtn"));
@@ -288,102 +279,6 @@ public:
 
 
         horizontalLayout->addWidget(LeftMenuContainer, 0, Qt::AlignLeft);
-
-        centerMainContainer = new QWidget(centralWidget);
-        centerMainContainer->setObjectName(QStringLiteral("centerMainContainer"));
-        centerMainContainer->setMinimumSize(QSize(200, 0));
-        verticalLayout_6 = new QVBoxLayout(centerMainContainer);
-        verticalLayout_6->setSpacing(0);
-        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        centerMainSubContainer = new QWidget(centerMainContainer);
-        centerMainSubContainer->setObjectName(QStringLiteral("centerMainSubContainer"));
-        centerMainSubContainer->setMinimumSize(QSize(200, 0));
-        verticalLayout_7 = new QVBoxLayout(centerMainSubContainer);
-        verticalLayout_7->setSpacing(0);
-        verticalLayout_7->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
-        verticalLayout_7->setContentsMargins(5, 5, 5, 5);
-        frame_7 = new QFrame(centerMainSubContainer);
-        frame_7->setObjectName(QStringLiteral("frame_7"));
-        frame_7->setFrameShape(QFrame::StyledPanel);
-        frame_7->setFrameShadow(QFrame::Raised);
-        horizontalLayout_6 = new QHBoxLayout(frame_7);
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        horizontalLayout_6->setContentsMargins(9, 9, 9, 9);
-        pushButton_4 = new QPushButton(frame_7);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-
-        horizontalLayout_6->addWidget(pushButton_4, 0, Qt::AlignLeft);
-
-        label_3 = new QLabel(frame_7);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        horizontalLayout_6->addWidget(label_3, 0, Qt::AlignRight);
-
-
-        verticalLayout_7->addWidget(frame_7, 0, Qt::AlignTop);
-
-        stackedWidget = new QStackedWidget(centerMainSubContainer);
-        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        sizePolicy1.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
-        stackedWidget->setSizePolicy(sizePolicy1);
-        page = new QWidget();
-        page->setObjectName(QStringLiteral("page"));
-        horizontalLayout_7 = new QHBoxLayout(page);
-        horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        label_4 = new QLabel(page);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        QFont font;
-        font.setBold(true);
-        font.setWeight(75);
-        label_4->setFont(font);
-        label_4->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_7->addWidget(label_4);
-
-        stackedWidget->addWidget(page);
-        page_2 = new QWidget();
-        page_2->setObjectName(QStringLiteral("page_2"));
-        verticalLayout_8 = new QVBoxLayout(page_2);
-        verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
-        label_5 = new QLabel(page_2);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setFont(font);
-        label_5->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_8->addWidget(label_5);
-
-        stackedWidget->addWidget(page_2);
-        page_5 = new QWidget();
-        page_5->setObjectName(QStringLiteral("page_5"));
-        verticalLayout_9 = new QVBoxLayout(page_5);
-        verticalLayout_9->setSpacing(6);
-        verticalLayout_9->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
-        label_6 = new QLabel(page_5);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setFont(font);
-        label_6->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_9->addWidget(label_6);
-
-        stackedWidget->addWidget(page_5);
-
-        verticalLayout_7->addWidget(stackedWidget);
-
-
-        verticalLayout_6->addWidget(centerMainSubContainer);
-
-
-        horizontalLayout->addWidget(centerMainContainer, 0, Qt::AlignLeft);
 
         MainBodyContainer = new QWidget(centralWidget);
         MainBodyContainer->setObjectName(QStringLiteral("MainBodyContainer"));
@@ -422,11 +317,11 @@ public:
 
         label = new QLabel(frame_5);
         label->setObjectName(QStringLiteral("label"));
-        QFont font1;
-        font1.setPointSize(10);
-        font1.setBold(true);
-        font1.setWeight(75);
-        label->setFont(font1);
+        QFont font;
+        font.setPointSize(10);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
 
         horizontalLayout_5->addWidget(label, 0, Qt::AlignLeft);
 
@@ -493,11 +388,16 @@ public:
         verticalLayout_10->setContentsMargins(11, 11, 11, 11);
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(5, 5, 5, 5);
-        label_7 = new QLabel(frame_6);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setStyleSheet(QStringLiteral(""));
+        outputframe = new QLabel(frame_6);
+        outputframe->setObjectName(QStringLiteral("outputframe"));
+        QSizePolicy sizePolicy3(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(outputframe->sizePolicy().hasHeightForWidth());
+        outputframe->setSizePolicy(sizePolicy3);
+        outputframe->setStyleSheet(QStringLiteral("background-color: rgb(39, 164, 175);"));
 
-        verticalLayout_10->addWidget(label_7);
+        verticalLayout_10->addWidget(outputframe);
 
         widget_2 = new QWidget(frame_6);
         widget_2->setObjectName(QStringLiteral("widget_2"));
@@ -506,11 +406,15 @@ public:
         horizontalLayout_10->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
         horizontalLayout_10->setContentsMargins(0, 5, 0, 0);
-        label_8 = new QLabel(widget_2);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setStyleSheet(QStringLiteral(""));
+        outputlabels = new QPlainTextEdit(widget_2);
+        outputlabels->setObjectName(QStringLiteral("outputlabels"));
+        sizePolicy3.setHeightForWidth(outputlabels->sizePolicy().hasHeightForWidth());
+        outputlabels->setSizePolicy(sizePolicy3);
+        outputlabels->setStyleSheet(QStringLiteral("background-color: rgb(170, 170, 255);"));
+        outputlabels->setReadOnly(true);
+        outputlabels->setTabStopWidth(80);
 
-        horizontalLayout_10->addWidget(label_8);
+        horizontalLayout_10->addWidget(outputlabels);
 
         smallimg = new QFrame(widget_2);
         smallimg->setObjectName(QStringLiteral("smallimg"));
@@ -521,11 +425,13 @@ public:
         horizontalLayout_11->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
         horizontalLayout_11->setContentsMargins(0, 0, 0, 0);
-        label_9 = new QLabel(smallimg);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setStyleSheet(QStringLiteral(""));
+        inputframe = new QLabel(smallimg);
+        inputframe->setObjectName(QStringLiteral("inputframe"));
+        sizePolicy3.setHeightForWidth(inputframe->sizePolicy().hasHeightForWidth());
+        inputframe->setSizePolicy(sizePolicy3);
+        inputframe->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 255);"));
 
-        horizontalLayout_11->addWidget(label_9);
+        horizontalLayout_11->addWidget(inputframe);
 
 
         horizontalLayout_10->addWidget(smallimg);
@@ -548,9 +454,6 @@ public:
         ShapeDetection->setCentralWidget(centralWidget);
 
         retranslateUi(ShapeDetection);
-
-        stackedWidget->setCurrentIndex(2);
-
 
         QMetaObject::connectSlotsByName(ShapeDetection);
     } // setupUi
@@ -590,7 +493,8 @@ public:
         switchbtn->setToolTip(QApplication::translate("ShapeDetection", "switch", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         switchbtn->setText(QApplication::translate("ShapeDetection", "Switch", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("ShapeDetection", "PushButton", Q_NULLPTR));
+        pausebtn->setText(QApplication::translate("ShapeDetection", "Pause", Q_NULLPTR));
+        closeFramebtn->setText(QApplication::translate("ShapeDetection", "Close Frame", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         settingsbtn->setToolTip(QApplication::translate("ShapeDetection", "Settings", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
@@ -599,19 +503,13 @@ public:
         helpbtn->setToolTip(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         helpbtn->setText(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("ShapeDetection", "Search", Q_NULLPTR));
-        label_3->setText(QApplication::translate("ShapeDetection", "Carpi", Q_NULLPTR));
-        label_4->setText(QApplication::translate("ShapeDetection", "Setting", Q_NULLPTR));
-        label_5->setText(QApplication::translate("ShapeDetection", "Information", Q_NULLPTR));
-        label_6->setText(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
         label_2->setText(QApplication::translate("ShapeDetection", "uygulama iconu", Q_NULLPTR));
         label->setText(QApplication::translate("ShapeDetection", "Shape Detection", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("ShapeDetection", "Kucult", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("ShapeDetection", "Buyut", Q_NULLPTR));
         pushButton->setText(QApplication::translate("ShapeDetection", "Carpi", Q_NULLPTR));
-        label_7->setText(QApplication::translate("ShapeDetection", "Buyuk oynat\304\261lan goruntu", Q_NULLPTR));
-        label_8->setText(QApplication::translate("ShapeDetection", "Tespit \303\247\304\261kt\304\261lar\304\261", Q_NULLPTR));
-        label_9->setText(QApplication::translate("ShapeDetection", "kucuk oynat\304\261lan goruntu", Q_NULLPTR));
+        outputframe->setText(QApplication::translate("ShapeDetection", "Buyuk oynat\304\261lan goruntu", Q_NULLPTR));
+        inputframe->setText(QApplication::translate("ShapeDetection", "kucuk oynat\304\261lan goruntu", Q_NULLPTR));
     } // retranslateUi
 
 };

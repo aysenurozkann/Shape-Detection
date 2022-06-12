@@ -56,6 +56,3 @@ LIBS += C:\opencv320\opencv\release\bin\libopencv_videostab320.dll
 LIBS += C:\opencv320\opencv\release\bin\opencv_ffmpeg320.dll
 
 
-
-
-SOURCES += main.cpp
