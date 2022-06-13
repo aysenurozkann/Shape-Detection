@@ -45,7 +45,6 @@ void getContours(Mat img_dil, Mat img)
     for (int i = 0; i < contours.size(); i++)
     {
         int area = contourArea(contours[i]);
-        cout << area << endl;
 
         if (area > 1000)
         {
@@ -100,25 +99,7 @@ void ShapeDetection::processFrameAndUpdate()
     if(matOriginal.empty() == true)
         return;
 
-/*    cv::inRange(matOriginal, cv::Scalar(0, 0, 175), cv::Scalar(100, 100, 256), matProcessed);
-    cv::GaussianBlur(matProcessed, matProcessed, cv::Size(9, 9), 1.5);
-    cv::HoughCircles(matProcessed, vecCircles, CV_HOUGH_GRADIENT, 2, matProcessed.rows / 4, 100, 50, 10, 400);
-
-
-    for(itrCircles = vecCircles.begin(); itrCircles != vecCircles.end(); itrCircles++)
-    {
-        ui->outputlabels->
-                appendPlainText(QString("ball position x = ") + QString::number((*itrCircles)[0]).rightJustified(4, ' ')+
-                                QString("y = ") + QString::number((*itrCircles)[1]).rightJustified(4, ' ') +
-                                QString(", radius = ") + QString::number((*itrCircles)[2], 'f', 3).rightJustified(7, ' '));
-
-        cv::circle(matOriginal, cv::Point((int)(*itrCircles)[0], (int)(*itrCircles)[1], 3, cv::Scalar(0, 255, 0), CV_FILLED);
-        cv::circle(matOriginal, cv::Point((int)(*itrCircles)[0], (int)(*itrCircles)[1], (int)(*itrCircles)[2], 3, cv::Scalar(0, 0, 255), 3);
-
-    }
-
-*/
-    preProcessImg(matOriginal);
+    matProcessed = preProcessImg(matOriginal);
 
     cv::cvtColor(matOriginal, matOriginal, CV_BGR2RGB);
 
@@ -129,7 +110,7 @@ void ShapeDetection::processFrameAndUpdate()
 
     ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal)); // Outputi big frame
     ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed)); // input small frame
-    ui->outputlabels->appendPlainText("merhaba");
+
 }
 
 
@@ -145,4 +126,23 @@ void ShapeDetection::on_pausebtn_clicked()
         tmrTimer->start(20);
         ui->pausebtn->setText("Pause");
     }
+}
+
+void ShapeDetection::on_pushButton_clicked()
+{
+    QWidget::close();
+}
+
+void ShapeDetection::on_pushButton_2_clicked()
+{
+    QWidget::showMinimized();
+}
+
+void ShapeDetection::on_pushButton_3_clicked()
+{
+    if(QWidget::isMaximized() == true)
+        QWidget::showNormal();
+    else
+        QWidget::showMaximized();
+
 }

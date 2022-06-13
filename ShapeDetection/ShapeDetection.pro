@@ -55,4 +55,7 @@ LIBS += C:\opencv320\opencv\release\bin\libopencv_videoio320.dll
 LIBS += C:\opencv320\opencv\release\bin\libopencv_videostab320.dll
 LIBS += C:\opencv320\opencv\release\bin\opencv_ffmpeg320.dll
 
+RESOURCES += \
+    resources.qrc
+
 

@@ -41,17 +41,11 @@ public:
     QFrame *frame_2;
     QVBoxLayout *verticalLayout_3;
     QPushButton *livevideobtn;
-    QPushButton *openvideobtn;
-    QPushButton *openphotobtn;
-    QPushButton *pencilbtn;
-    QPushButton *erasebtn;
     QPushButton *takephotobtn;
-    QPushButton *switchbtn;
     QPushButton *pausebtn;
     QSpacerItem *verticalSpacer;
     QFrame *frame_3;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *closeFramebtn;
     QPushButton *settingsbtn;
     QPushButton *helpbtn;
     QWidget *MainBodyContainer;
@@ -92,6 +86,9 @@ public:
         sizePolicy.setHeightForWidth(ShapeDetection->sizePolicy().hasHeightForWidth());
         ShapeDetection->setSizePolicy(sizePolicy);
         ShapeDetection->setMinimumSize(QSize(800, 500));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/icons/icons/smile.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        ShapeDetection->setWindowIcon(icon);
         ShapeDetection->setStyleSheet(QLatin1String("#ShapeDetection{\n"
 "	background:#001219;\n"
 "}\n"
@@ -165,7 +162,7 @@ public:
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(10, 0, 30, 0);
+        verticalLayout_2->setContentsMargins(10, 0, 20, 0);
         frame = new QFrame(LeftMenuSubContainer);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -177,7 +174,15 @@ public:
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         menubtn = new QPushButton(frame);
         menubtn->setObjectName(QStringLiteral("menubtn"));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        menubtn->setFont(font);
         menubtn->setStyleSheet(QStringLiteral(""));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/icons/icons/align-justify.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        menubtn->setIcon(icon1);
+        menubtn->setIconSize(QSize(24, 24));
 
         horizontalLayout_2->addWidget(menubtn);
 
@@ -197,44 +202,35 @@ public:
         verticalLayout_3->setContentsMargins(0, 10, 0, 10);
         livevideobtn = new QPushButton(frame_2);
         livevideobtn->setObjectName(QStringLiteral("livevideobtn"));
+        QFont font1;
+        font1.setPointSize(8);
+        font1.setBold(true);
+        font1.setWeight(75);
+        livevideobtn->setFont(font1);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/icons/icons/video.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        livevideobtn->setIcon(icon2);
+        livevideobtn->setIconSize(QSize(24, 24));
 
         verticalLayout_3->addWidget(livevideobtn);
 
-        openvideobtn = new QPushButton(frame_2);
-        openvideobtn->setObjectName(QStringLiteral("openvideobtn"));
-
-        verticalLayout_3->addWidget(openvideobtn);
-
-        openphotobtn = new QPushButton(frame_2);
-        openphotobtn->setObjectName(QStringLiteral("openphotobtn"));
-
-        verticalLayout_3->addWidget(openphotobtn);
-
-        pencilbtn = new QPushButton(frame_2);
-        pencilbtn->setObjectName(QStringLiteral("pencilbtn"));
-
-        verticalLayout_3->addWidget(pencilbtn);
-
-        erasebtn = new QPushButton(frame_2);
-        erasebtn->setObjectName(QStringLiteral("erasebtn"));
-
-        verticalLayout_3->addWidget(erasebtn);
-
         takephotobtn = new QPushButton(frame_2);
         takephotobtn->setObjectName(QStringLiteral("takephotobtn"));
+        takephotobtn->setFont(font);
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/icons/icons/save.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        takephotobtn->setIcon(icon3);
+        takephotobtn->setIconSize(QSize(24, 24));
 
         verticalLayout_3->addWidget(takephotobtn);
 
-        switchbtn = new QPushButton(frame_2);
-        switchbtn->setObjectName(QStringLiteral("switchbtn"));
-        switchbtn->setStyleSheet(QLatin1String("background-color:rgb(0, 170, 255);\n"
-"background-color: rgb(102, 233, 240);\n"
-""));
-
-        verticalLayout_3->addWidget(switchbtn);
-
         pausebtn = new QPushButton(frame_2);
         pausebtn->setObjectName(QStringLiteral("pausebtn"));
+        pausebtn->setFont(font);
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/icons/icons/pause-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pausebtn->setIcon(icon4);
+        pausebtn->setIconSize(QSize(24, 24));
 
         verticalLayout_3->addWidget(pausebtn);
 
@@ -254,20 +250,24 @@ public:
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 10, 0, 10);
-        closeFramebtn = new QPushButton(frame_3);
-        closeFramebtn->setObjectName(QStringLiteral("closeFramebtn"));
-
-        verticalLayout_4->addWidget(closeFramebtn);
-
         settingsbtn = new QPushButton(frame_3);
         settingsbtn->setObjectName(QStringLiteral("settingsbtn"));
         settingsbtn->setStyleSheet(QStringLiteral("background-color:#1f232a;"));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/icons/icons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        settingsbtn->setIcon(icon5);
+        settingsbtn->setIconSize(QSize(24, 24));
 
         verticalLayout_4->addWidget(settingsbtn);
 
         helpbtn = new QPushButton(frame_3);
         helpbtn->setObjectName(QStringLiteral("helpbtn"));
+        helpbtn->setFont(font);
         helpbtn->setStyleSheet(QStringLiteral("background-color:#16191d;"));
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/icons/icons/help-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        helpbtn->setIcon(icon6);
+        helpbtn->setIconSize(QSize(24, 24));
 
         verticalLayout_4->addWidget(helpbtn);
 
@@ -312,16 +312,26 @@ public:
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
         label_2 = new QLabel(frame_5);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setMinimumSize(QSize(0, 0));
+        QFont font2;
+        font2.setPointSize(8);
+        font2.setBold(false);
+        font2.setWeight(50);
+        label_2->setFont(font2);
+        label_2->setLineWidth(1);
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/smile.svg")));
+        label_2->setMargin(3);
+        label_2->setIndent(-1);
 
         horizontalLayout_5->addWidget(label_2);
 
         label = new QLabel(frame_5);
         label->setObjectName(QStringLiteral("label"));
-        QFont font;
-        font.setPointSize(10);
-        font.setBold(true);
-        font.setWeight(75);
-        label->setFont(font);
+        QFont font3;
+        font3.setPointSize(10);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label->setFont(font3);
 
         horizontalLayout_5->addWidget(label, 0, Qt::AlignLeft);
 
@@ -340,16 +350,28 @@ public:
         horizontalLayout_4->setContentsMargins(4, 4, 4, 4);
         pushButton_2 = new QPushButton(frame_4);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/icons/icons/minus.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon7);
+        pushButton_2->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton_2);
 
         pushButton_3 = new QPushButton(frame_4);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        QIcon icon8;
+        icon8.addFile(QStringLiteral(":/icons/icons/maximize.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon8);
+        pushButton_3->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton_3);
 
         pushButton = new QPushButton(frame_4);
         pushButton->setObjectName(QStringLiteral("pushButton"));
+        QIcon icon9;
+        icon9.addFile(QStringLiteral(":/icons/icons/x.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon9);
+        pushButton->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton);
 
@@ -464,37 +486,16 @@ public:
 #ifndef QT_NO_TOOLTIP
         menubtn->setToolTip(QApplication::translate("ShapeDetection", "menu", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        menubtn->setText(QApplication::translate("ShapeDetection", "Menu", Q_NULLPTR));
+        menubtn->setText(QApplication::translate("ShapeDetection", "Home", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         livevideobtn->setToolTip(QApplication::translate("ShapeDetection", "Live Video", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        livevideobtn->setText(QApplication::translate("ShapeDetection", "Live video", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        openvideobtn->setToolTip(QApplication::translate("ShapeDetection", "Open Video", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        openvideobtn->setText(QApplication::translate("ShapeDetection", "Open Video", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        openphotobtn->setToolTip(QApplication::translate("ShapeDetection", "Open Photo", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        openphotobtn->setText(QApplication::translate("ShapeDetection", "Open Photo", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        pencilbtn->setToolTip(QApplication::translate("ShapeDetection", "pencil", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        pencilbtn->setText(QApplication::translate("ShapeDetection", "Pencil", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        erasebtn->setToolTip(QApplication::translate("ShapeDetection", "erase", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        erasebtn->setText(QApplication::translate("ShapeDetection", "Erase", Q_NULLPTR));
+        livevideobtn->setText(QApplication::translate("ShapeDetection", "Camera", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         takephotobtn->setToolTip(QApplication::translate("ShapeDetection", "takephoto", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         takephotobtn->setText(QApplication::translate("ShapeDetection", "Take a Photo", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        switchbtn->setToolTip(QApplication::translate("ShapeDetection", "switch", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        switchbtn->setText(QApplication::translate("ShapeDetection", "Switch", Q_NULLPTR));
-        pausebtn->setText(QApplication::translate("ShapeDetection", "Pause", Q_NULLPTR));
-        closeFramebtn->setText(QApplication::translate("ShapeDetection", "Close Frame", Q_NULLPTR));
+        pausebtn->setText(QApplication::translate("ShapeDetection", "Pause/Resume", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         settingsbtn->setToolTip(QApplication::translate("ShapeDetection", "Settings", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
@@ -503,11 +504,11 @@ public:
         helpbtn->setToolTip(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         helpbtn->setText(QApplication::translate("ShapeDetection", "Help", Q_NULLPTR));
-        label_2->setText(QApplication::translate("ShapeDetection", "uygulama iconu", Q_NULLPTR));
+        label_2->setText(QString());
         label->setText(QApplication::translate("ShapeDetection", "Shape Detection", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("ShapeDetection", "Kucult", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("ShapeDetection", "Buyut", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("ShapeDetection", "Carpi", Q_NULLPTR));
+        pushButton_2->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton->setText(QString());
         outputframe->setText(QApplication::translate("ShapeDetection", "Buyuk oynat\304\261lan goruntu", Q_NULLPTR));
         inputframe->setText(QApplication::translate("ShapeDetection", "kucuk oynat\304\261lan goruntu", Q_NULLPTR));
     } // retranslateUi
