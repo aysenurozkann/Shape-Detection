@@ -40,8 +40,6 @@ public:
     QPushButton *menubtn;
     QFrame *frame_2;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *livevideobtn;
-    QPushButton *takephotobtn;
     QPushButton *pausebtn;
     QSpacerItem *verticalSpacer;
     QFrame *frame_3;
@@ -200,36 +198,12 @@ public:
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 10, 0, 10);
-        livevideobtn = new QPushButton(frame_2);
-        livevideobtn->setObjectName(QStringLiteral("livevideobtn"));
-        QFont font1;
-        font1.setPointSize(8);
-        font1.setBold(true);
-        font1.setWeight(75);
-        livevideobtn->setFont(font1);
-        QIcon icon2;
-        icon2.addFile(QStringLiteral(":/icons/icons/video.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        livevideobtn->setIcon(icon2);
-        livevideobtn->setIconSize(QSize(24, 24));
-
-        verticalLayout_3->addWidget(livevideobtn);
-
-        takephotobtn = new QPushButton(frame_2);
-        takephotobtn->setObjectName(QStringLiteral("takephotobtn"));
-        takephotobtn->setFont(font);
-        QIcon icon3;
-        icon3.addFile(QStringLiteral(":/icons/icons/save.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        takephotobtn->setIcon(icon3);
-        takephotobtn->setIconSize(QSize(24, 24));
-
-        verticalLayout_3->addWidget(takephotobtn);
-
         pausebtn = new QPushButton(frame_2);
         pausebtn->setObjectName(QStringLiteral("pausebtn"));
         pausebtn->setFont(font);
-        QIcon icon4;
-        icon4.addFile(QStringLiteral(":/icons/icons/pause-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pausebtn->setIcon(icon4);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/icons/icons/pause-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pausebtn->setIcon(icon2);
         pausebtn->setIconSize(QSize(24, 24));
 
         verticalLayout_3->addWidget(pausebtn);
@@ -254,9 +228,9 @@ public:
         settingsbtn->setObjectName(QStringLiteral("settingsbtn"));
         settingsbtn->setFont(font);
         settingsbtn->setStyleSheet(QStringLiteral("background-color:#1f232a;"));
-        QIcon icon5;
-        icon5.addFile(QStringLiteral(":/icons/icons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        settingsbtn->setIcon(icon5);
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/icons/icons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        settingsbtn->setIcon(icon3);
         settingsbtn->setIconSize(QSize(24, 24));
 
         verticalLayout_4->addWidget(settingsbtn);
@@ -265,9 +239,9 @@ public:
         helpbtn->setObjectName(QStringLiteral("helpbtn"));
         helpbtn->setFont(font);
         helpbtn->setStyleSheet(QStringLiteral("background-color:#16191d;"));
-        QIcon icon6;
-        icon6.addFile(QStringLiteral(":/icons/icons/help-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        helpbtn->setIcon(icon6);
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/icons/icons/help-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        helpbtn->setIcon(icon4);
         helpbtn->setIconSize(QSize(24, 24));
 
         verticalLayout_4->addWidget(helpbtn);
@@ -314,11 +288,11 @@ public:
         label_2 = new QLabel(frame_5);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setMinimumSize(QSize(0, 0));
-        QFont font2;
-        font2.setPointSize(8);
-        font2.setBold(false);
-        font2.setWeight(50);
-        label_2->setFont(font2);
+        QFont font1;
+        font1.setPointSize(8);
+        font1.setBold(false);
+        font1.setWeight(50);
+        label_2->setFont(font1);
         label_2->setLineWidth(1);
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/smile.svg")));
         label_2->setMargin(3);
@@ -328,11 +302,11 @@ public:
 
         label = new QLabel(frame_5);
         label->setObjectName(QStringLiteral("label"));
-        QFont font3;
-        font3.setPointSize(10);
-        font3.setBold(true);
-        font3.setWeight(75);
-        label->setFont(font3);
+        QFont font2;
+        font2.setPointSize(10);
+        font2.setBold(true);
+        font2.setWeight(75);
+        label->setFont(font2);
 
         horizontalLayout_5->addWidget(label, 0, Qt::AlignLeft);
 
@@ -351,27 +325,27 @@ public:
         horizontalLayout_4->setContentsMargins(4, 4, 4, 4);
         pushButton_2 = new QPushButton(frame_4);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        QIcon icon7;
-        icon7.addFile(QStringLiteral(":/icons/icons/minus.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon7);
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/icons/icons/minus.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon5);
         pushButton_2->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton_2);
 
         pushButton_3 = new QPushButton(frame_4);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        QIcon icon8;
-        icon8.addFile(QStringLiteral(":/icons/icons/maximize.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_3->setIcon(icon8);
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/icons/icons/maximize.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon6);
         pushButton_3->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton_3);
 
         pushButton = new QPushButton(frame_4);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        QIcon icon9;
-        icon9.addFile(QStringLiteral(":/icons/icons/x.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon9);
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/icons/icons/x.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon7);
         pushButton->setIconSize(QSize(20, 20));
 
         horizontalLayout_4->addWidget(pushButton);
@@ -418,7 +392,12 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(outputframe->sizePolicy().hasHeightForWidth());
         outputframe->setSizePolicy(sizePolicy3);
-        outputframe->setStyleSheet(QStringLiteral(""));
+        outputframe->setAutoFillBackground(false);
+        outputframe->setStyleSheet(QLatin1String("\n"
+"background-color: rgb(54, 63, 70);"));
+        outputframe->setFrameShape(QFrame::Box);
+        outputframe->setFrameShadow(QFrame::Plain);
+        outputframe->setLineWidth(2);
 
         verticalLayout_10->addWidget(outputframe);
 
@@ -433,9 +412,9 @@ public:
         outputlabels->setObjectName(QStringLiteral("outputlabels"));
         sizePolicy3.setHeightForWidth(outputlabels->sizePolicy().hasHeightForWidth());
         outputlabels->setSizePolicy(sizePolicy3);
-        QFont font4;
-        font4.setPointSize(10);
-        outputlabels->setFont(font4);
+        QFont font3;
+        font3.setPointSize(10);
+        outputlabels->setFont(font3);
         outputlabels->setStyleSheet(QStringLiteral(""));
         outputlabels->setReadOnly(true);
         outputlabels->setTabStopWidth(80);
@@ -455,7 +434,9 @@ public:
         inputframe->setObjectName(QStringLiteral("inputframe"));
         sizePolicy3.setHeightForWidth(inputframe->sizePolicy().hasHeightForWidth());
         inputframe->setSizePolicy(sizePolicy3);
-        inputframe->setStyleSheet(QStringLiteral(""));
+        inputframe->setAutoFillBackground(false);
+        inputframe->setStyleSheet(QStringLiteral("background-color: rgb(54, 63, 70);"));
+        inputframe->setFrameShape(QFrame::Box);
 
         horizontalLayout_11->addWidget(inputframe);
 
@@ -491,14 +472,6 @@ public:
         menubtn->setToolTip(QApplication::translate("ShapeDetection", "menu", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         menubtn->setText(QApplication::translate("ShapeDetection", "Home", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        livevideobtn->setToolTip(QApplication::translate("ShapeDetection", "Live Video", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        livevideobtn->setText(QApplication::translate("ShapeDetection", "Camera", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        takephotobtn->setToolTip(QApplication::translate("ShapeDetection", "takephoto", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        takephotobtn->setText(QApplication::translate("ShapeDetection", "Take a Photo", Q_NULLPTR));
         pausebtn->setText(QApplication::translate("ShapeDetection", "Pause/Resume", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         settingsbtn->setToolTip(QApplication::translate("ShapeDetection", "Settings", Q_NULLPTR));
