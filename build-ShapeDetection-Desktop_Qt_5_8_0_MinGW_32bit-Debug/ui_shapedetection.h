@@ -162,7 +162,7 @@ public:
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(10, 0, 20, 0);
+        verticalLayout_2->setContentsMargins(10, 0, 0, 0);
         frame = new QFrame(LeftMenuSubContainer);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -252,6 +252,7 @@ public:
         verticalLayout_4->setContentsMargins(0, 10, 0, 10);
         settingsbtn = new QPushButton(frame_3);
         settingsbtn->setObjectName(QStringLiteral("settingsbtn"));
+        settingsbtn->setFont(font);
         settingsbtn->setStyleSheet(QStringLiteral("background-color:#1f232a;"));
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/icons/icons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
@@ -417,7 +418,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(outputframe->sizePolicy().hasHeightForWidth());
         outputframe->setSizePolicy(sizePolicy3);
-        outputframe->setStyleSheet(QStringLiteral("background-color: rgb(39, 164, 175);"));
+        outputframe->setStyleSheet(QStringLiteral(""));
 
         verticalLayout_10->addWidget(outputframe);
 
@@ -432,7 +433,10 @@ public:
         outputlabels->setObjectName(QStringLiteral("outputlabels"));
         sizePolicy3.setHeightForWidth(outputlabels->sizePolicy().hasHeightForWidth());
         outputlabels->setSizePolicy(sizePolicy3);
-        outputlabels->setStyleSheet(QStringLiteral("background-color: rgb(170, 170, 255);"));
+        QFont font4;
+        font4.setPointSize(10);
+        outputlabels->setFont(font4);
+        outputlabels->setStyleSheet(QStringLiteral(""));
         outputlabels->setReadOnly(true);
         outputlabels->setTabStopWidth(80);
 
@@ -451,7 +455,7 @@ public:
         inputframe->setObjectName(QStringLiteral("inputframe"));
         sizePolicy3.setHeightForWidth(inputframe->sizePolicy().hasHeightForWidth());
         inputframe->setSizePolicy(sizePolicy3);
-        inputframe->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 255);"));
+        inputframe->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_11->addWidget(inputframe);
 

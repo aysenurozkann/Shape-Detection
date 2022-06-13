@@ -1,6 +1,5 @@
 #include "shapedetection.h"
 #include "ui_shapedetection.h"
-
 #include <QtCore>
 
 ShapeDetection::ShapeDetection(QWidget *parent) :
@@ -27,15 +26,15 @@ ShapeDetection::~ShapeDetection()
 }
 using namespace cv;
 
+
 ////////////////////////////////////////////////////////////////////////////7
 
-void getContours(Mat img_dil, Mat img)
+void ShapeDetection::getContours(Mat img_dil, Mat img)
 {
     vector<vector<Point>> contours;
     vector<Vec4i> hierarchy;
 
     findContours(img_dil, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
-    // drawContours(img, contours, -1, Scalar(100, 0, 255), 2);
 
     vector<vector<Point>> conPoly(contours.size());
     vector<Rect> boundRect(contours.size());
@@ -44,13 +43,14 @@ void getContours(Mat img_dil, Mat img)
     // böylece alanı 1000 den küçük olanları gürültü olarak algıladık ve çizdirmedik, contour yapmadık.
     for (int i = 0; i < contours.size(); i++)
     {
+
         int area = contourArea(contours[i]);
 
         if (area > 1000)
         {
             float peri = arcLength(contours[i], true);
             approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
-            drawContours(img, conPoly, i, Scalar(0, 255, 0), 2);
+            drawContours(img, conPoly, i, Scalar(0, 255, 0), 2); // img nin üzerine çizdi
             //cout << "conyPol elemanları" << conPoly[i] << endl; // bu conPoly dediğimiz contours deki bulunan nokta sayıları
             //cout << conPoly[i].size() << endl;
             boundRect[i] = boundingRect(conPoly[i]);
@@ -63,14 +63,14 @@ void getContours(Mat img_dil, Mat img)
             {
                 float aspRatio = (float)boundRect[i].width / (float)boundRect[i].height;
                 if (aspRatio > 0.95 && aspRatio < 1.05) { ObjectType = "Square"; } // genişlik ve yüksekliğin oranı 1 civarında ise bu bir karedir
-                else { ObjectType = "Rectangle"; }
+                else { ObjectType = "Rectangle";}
             }
 
-            else if (objCore > 4) { ObjectType = "Circle"; }
+            else if (objCore > 4) { ObjectType = "Circle";}
 
             drawContours(img, conPoly, i, Scalar(0, 255, 0), 2);
             rectangle(img, boundRect[i].tl(), boundRect[i].br(), Scalar(255, 100, 100), 3);
-            putText(img, ObjectType, { boundRect[i].x, boundRect[i].y - 5 }, 1, FONT_HERSHEY_PLAIN, Scalar(0, 0, 0), 1);
+            putText(img, ObjectType, { boundRect[i].x, boundRect[i].y - 5 }, 1, FONT_HERSHEY_PLAIN, Scalar(100, 150, 100), 1);
         }
     }
 }
@@ -86,9 +86,10 @@ Mat preProcessImg(Mat image)
     Mat kernel(getStructuringElement((MORPH_RECT), Size(3, 3)));
     dilate(img_canny, img_dil, kernel);
 
-    getContours(img_dil, image);
+    ShapeDetection contoursObject;
+    contoursObject.getContours(img_dil, image);
 
-    //imshow("dilation Image", img_dil);
+
     return img_dil;
 }
 
@@ -108,9 +109,11 @@ void ShapeDetection::processFrameAndUpdate()
 
 
 
-    ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal)); // Outputi big frame
-    ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed)); // input small frame
+    ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal)); // original resim üzerine çizilmiş kareler
+    ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed)); // siyah beyaz
 
+    ui->outputlabels->appendPlainText("Number of the triangle : " + QString::number(numtriangle) + "\nNumber of the Square : "+ QString::number(numsquare) + \
+                                      "\nNumber of the circle : " + QString::number(numcircle) + "\nNumber of the rectangle : " + QString::number(numrect));
 }
 
 
@@ -144,5 +147,6 @@ void ShapeDetection::on_pushButton_3_clicked()
         QWidget::showNormal();
     else
         QWidget::showMaximized();
+
 
 }

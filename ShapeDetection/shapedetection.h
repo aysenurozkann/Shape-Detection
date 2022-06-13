@@ -31,6 +31,7 @@ public:
 
 public slots:
     void processFrameAndUpdate();
+    void getContours(Mat img_dil, Mat img);
 
 private slots:
     void on_pausebtn_clicked();
@@ -41,10 +42,16 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+
 private:
     Ui::ShapeDetection *ui;
 
     cv::VideoCapture liveCap;
+
+    int numtriangle{0};
+    int numrect{0};
+    int numsquare{0};
+    int numcircle{0};
 
     cv::Mat matOriginal;
     cv::Mat matProcessed;

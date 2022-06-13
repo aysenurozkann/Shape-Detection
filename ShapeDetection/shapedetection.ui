@@ -139,7 +139,7 @@ background-color:#2c313c;
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>20</number>
+           <number>0</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -348,6 +348,12 @@ background-color:#2c313c;
              </property>
              <item>
               <widget class="QPushButton" name="settingsbtn">
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>Settings</string>
                </property>
@@ -696,7 +702,7 @@ background-color:#2c313c;
                    </sizepolicy>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(39, 164, 175);</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>Buyuk oynatılan goruntu</string>
@@ -729,8 +735,13 @@ background-color:#2c313c;
                        <verstretch>0</verstretch>
                       </sizepolicy>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(170, 170, 255);</string>
+                      <string notr="true"/>
                      </property>
                      <property name="readOnly">
                       <bool>true</bool>
@@ -773,7 +784,7 @@ background-color:#2c313c;
                          </sizepolicy>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-color: rgb(255, 170, 255);</string>
+                         <string notr="true"/>
                         </property>
                         <property name="text">
                          <string>kucuk oynatılan goruntu</string>
