@@ -40,37 +40,33 @@ void ShapeDetection::getContours(Mat img_dil, Mat img)
     vector<Rect> boundRect(contours.size());
     string ObjectType;
 
+
     // böylece alanı 1000 den küçük olanları gürültü olarak algıladık ve çizdirmedik, contour yapmadık.
     for (int i = 0; i < contours.size(); i++)
     {
-
         int area = contourArea(contours[i]);
 
         if (area > 1000)
         {
             float peri = arcLength(contours[i], true);
             approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
-            drawContours(img, conPoly, i, Scalar(0, 255, 0), 2); // img nin üzerine çizdi
-            //cout << "conyPol elemanları" << conPoly[i] << endl; // bu conPoly dediğimiz contours deki bulunan nokta sayıları
-            //cout << conPoly[i].size() << endl;
             boundRect[i] = boundingRect(conPoly[i]);
-            // rectangle(img, boundRect[i].tl(), boundRect[i].br(), Scalar(255, 100, 100), 3);
 
             int objCore = (int)conPoly[i].size();
 
-            if (objCore == 3) { ObjectType = "Triangle"; }
+            if (objCore == 3) { ObjectType = "Triangle";}
             else if (objCore == 4)
             {
                 float aspRatio = (float)boundRect[i].width / (float)boundRect[i].height;
-                if (aspRatio > 0.95 && aspRatio < 1.05) { ObjectType = "Square"; } // genişlik ve yüksekliğin oranı 1 civarında ise bu bir karedir
+                if (aspRatio > 0.95 && aspRatio < 1.05) { ObjectType = "Square";} // genişlik ve yüksekliğin oranı 1 civarında ise bu bir karedir
                 else { ObjectType = "Rectangle";}
             }
 
             else if (objCore > 4) { ObjectType = "Circle";}
 
-            drawContours(img, conPoly, i, Scalar(0, 255, 0), 2);
+            //drawContours(img, conPoly, i, Scalar(0, 255, 0), 2);
             rectangle(img, boundRect[i].tl(), boundRect[i].br(), Scalar(255, 100, 100), 3);
-            putText(img, ObjectType, { boundRect[i].x, boundRect[i].y - 5 }, 1, FONT_HERSHEY_PLAIN, Scalar(100, 150, 100), 1);
+            putText(img, ObjectType, { boundRect[i].x, boundRect[i].y - 5 }, 2, FONT_HERSHEY_PLAIN, Scalar(0, 0, 0), 2);
         }
     }
 }
@@ -103,18 +99,21 @@ void ShapeDetection::processFrameAndUpdate()
     matProcessed = preProcessImg(matOriginal);
 
     cv::cvtColor(matOriginal, matOriginal, CV_BGR2RGB);
+    cv::resize(matOriginal, matOriginal, cv::Size(ui->outputframe->width(), ui->outputframe->height()), INTER_LINEAR);
+    cv::resize(matProcessed, matProcessed, cv::Size(ui->inputframe->width(), ui->inputframe->height()), INTER_LINEAR);
 
     QImage qimageOriginal((uchar*)matOriginal.data, matOriginal.cols, matOriginal.rows, matOriginal.step, QImage::Format_RGB888);
     QImage qimgProcessed((uchar*)matProcessed.data, matProcessed.cols, matProcessed.rows, matProcessed.step, QImage::Format_Indexed8);
 
 
 
-    ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal)); // original resim üzerine çizilmiş kareler
-    ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed)); // siyah beyaz
+    ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal));
+    ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed));
 
-    ui->outputlabels->appendPlainText("Number of the triangle : " + QString::number(numtriangle) + "\nNumber of the Square : "+ QString::number(numsquare) + \
+    /*ui->outputlabels->appendPlainText("Number of the triangle : " + QString::number(numtriangle) + "\nNumber of the Square : "+ QString::number(numsquare) + \
                                       "\nNumber of the circle : " + QString::number(numcircle) + "\nNumber of the rectangle : " + QString::number(numrect));
-}
+
+*/}
 
 
 void ShapeDetection::on_pausebtn_clicked()

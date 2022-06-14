@@ -48,11 +48,6 @@ private:
 
     cv::VideoCapture liveCap;
 
-    int numtriangle{0};
-    int numrect{0};
-    int numsquare{0};
-    int numcircle{0};
-
     cv::Mat matOriginal;
     cv::Mat matProcessed;
 
