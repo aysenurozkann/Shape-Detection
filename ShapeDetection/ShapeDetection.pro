@@ -24,11 +24,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        shapedetection.cpp
+        shapedetection.cpp \
+    settingswindow.cpp
 
-HEADERS  += shapedetection.h
+HEADERS  += shapedetection.h \
+    settingswindow.h
 
-FORMS    += shapedetection.ui
+FORMS    += shapedetection.ui \
+    settingswindow.ui
 
 
 INCLUDEPATH += C:\opencv320\opencv\release\install\include

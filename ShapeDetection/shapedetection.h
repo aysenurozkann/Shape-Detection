@@ -1,6 +1,7 @@
 #ifndef SHAPEDETECTION_H
 #define SHAPEDETECTION_H
 
+#include "settingswindow.h"
 #include <QMainWindow>
 #include <QTimer>
 
@@ -43,8 +44,11 @@ private slots:
     void on_pushButton_3_clicked();
 
 
+    void on_settingsbtn_clicked();
+
 private:
     Ui::ShapeDetection *ui;
+    settingswindow *windowsetting;
 
     cv::VideoCapture liveCap;
 

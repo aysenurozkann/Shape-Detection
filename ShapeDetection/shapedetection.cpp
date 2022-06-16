@@ -44,6 +44,7 @@ void ShapeDetection::getContours(Mat img_dil, Mat img)
     // böylece alanı 1000 den küçük olanları gürültü olarak algıladık ve çizdirmedik, contour yapmadık.
     for (int i = 0; i < contours.size(); i++)
     {
+
         int area = contourArea(contours[i]);
 
         if (area > 1000)
@@ -110,10 +111,10 @@ void ShapeDetection::processFrameAndUpdate()
     ui->outputframe->setPixmap(QPixmap::fromImage(qimageOriginal));
     ui->inputframe->setPixmap(QPixmap::fromImage(qimgProcessed));
 
-    /*ui->outputlabels->appendPlainText("Number of the triangle : " + QString::number(numtriangle) + "\nNumber of the Square : "+ QString::number(numsquare) + \
+    //ui->outputlabels->appendPlainText("Number of the triangle : " + QString::number(numtriangle) + "\nNumber of the Square : "+ QString::number(numsquare) + \
                                       "\nNumber of the circle : " + QString::number(numcircle) + "\nNumber of the rectangle : " + QString::number(numrect));
 
-*/}
+}
 
 
 void ShapeDetection::on_pausebtn_clicked()
@@ -148,4 +149,10 @@ void ShapeDetection::on_pushButton_3_clicked()
         QWidget::showMaximized();
 
 
+}
+
+void ShapeDetection::on_settingsbtn_clicked()
+{
+    windowsetting = new settingswindow(this);
+    windowsetting->show();
 }
